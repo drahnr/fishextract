@@ -1,0 +1,15 @@
+[package]
+name = "fishextract"
+version = "0.0.0"
+edition = "2021"
+license = "MIT OR Apache-2.0 OR MPL-2.0"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+description = "Rust native mermaid parser and generator of SVGs based on those."
+repository = "https://github.com/drahnr/fishextract.git"
+categories = ["compilers", "graphics", "visualization"]
+keywords = ["mermaid", "graph", "diagram", "svg"]
+
+[dependencies]
+log = { version = "0.4.20", features = ["serde"] }
+pest = "2.7.3"
+serde = { version = "1.0.188", features = ["derive"] }
