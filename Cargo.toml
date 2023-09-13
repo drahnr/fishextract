@@ -12,4 +12,5 @@ keywords = ["mermaid", "graph", "diagram", "svg"]
 [dependencies]
 log = { version = "0.4.20", features = ["serde"] }
 pest = "2.7.3"
+pest_derive = "2.7.3"
 serde = { version = "1.0.188", features = ["derive"] }
