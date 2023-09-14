@@ -16,7 +16,7 @@ bare = { sentence+ }
 markdown = { "\"`" ~ (!"`\"" ~ sentence ~ NEWLINE?)+ ~ "`\""}
 plain = {"\"" ~ (!"\"" ~ sentence )+ ~ "\""}
 
-content = { (markdown | plain | bare) }
+content = _{ (markdown | plain | bare) }
 
 
 ident_def_boxed = { "[" ~ content ~ "]" }
@@ -34,14 +34,14 @@ ident_def_rounded_box = { "([" ~ content ~ "])" }
 ident_def_shopping = { "[\\" ~ content ~ "/]" }
 ident_def_subroutine = { "[[" ~ content ~ "]]" }
 
-any_ident_def = { (ident_def_stadium | ident_def_boxed | ident_def_christmas | ident_def_circle | ident_def_database | ident_def_diamond | ident_def_double_circle | ident_def_flag | ident_def_hexagon | ident_def_parallel | ident_def_parallel_alt | ident_def_rounded_box | ident_def_shopping | ident_def_subroutine) }
+any_ident_def = _{ (ident_def_stadium | ident_def_boxed | ident_def_christmas | ident_def_circle | ident_def_database | ident_def_diamond | ident_def_double_circle | ident_def_flag | ident_def_hexagon | ident_def_parallel | ident_def_parallel_alt | ident_def_rounded_box | ident_def_shopping | ident_def_subroutine) }
 base_ident = @{ ASCII_ALPHA ~ (ASCII_ALPHANUMERIC | "_")* }
 ident = { base_ident ~ any_ident_def? }
 
 
 link_annotation_pipes = { "|" ~ content ~ "|" }
 link_annotation_pipeless = { !"|" ~ content  ~ !"|" }
-link_annotation_any = { (link_annotation_pipes | link_annotation_pipeless) }
+link_annotation_any = _{ (link_annotation_pipes | link_annotation_pipeless) }
 
 arrow_head = { ("<"|"o"|"x"|">") }
 link_arrow = @{ (arrow_head ~ "-"{2,}) | ("-"{2,} ~ arrow_head) | (arrow_head ~"-"{2,} ~ arrow_head) }
